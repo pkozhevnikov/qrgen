@@ -4,8 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.apache.nifi</groupId>
+        <artifactId>nifi-nar-bundles</artifactId>
+        <version>0.3.0</version>
+    </parent>
+
     <groupId>home.training</groupId>
-    <artifactId>qrgen</artifactId>
+    <artifactId>nifi-qrgen-nar</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -23,6 +29,17 @@
             <groupId>org.apache.nifi</groupId>
             <artifactId>nifi-api</artifactId>
             <version>${nifiVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-processor-utils</artifactId>
+            <version>${nifiVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
         </dependency>
         <dependency>
             <groupId>com.google.zxing</groupId>
@@ -30,9 +47,10 @@
             <version>3.2.1</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.3.2</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.8</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
